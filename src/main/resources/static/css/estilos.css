@@ -1,0 +1,20 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 5, 2023, 5:29:48 PM
+    Author     : emilyrodriguez
+*/
+*{/*selector universal*/
+    background-color: aliceblue;
+}
+
+h1,h2,h3{
+    color: blueviolet;
+}
+
+p{ /*selector*/
+    font-family: sans-serif;
+    color:brown;
+}
