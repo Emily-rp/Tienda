@@ -6,15 +6,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Created on : Feb 5, 2023, 5:29:48 PM
     Author     : emilyrodriguez
 */
-*{/*selector universal*/
-    background-color: aliceblue;
-}
 
-h1,h2,h3{
-    color: blueviolet;
-}
-
-p{ /*selector*/
-    font-family: sans-serif;
-    color:brown;
+#header{
+    width: 100%;/*ancho*/
+    height: 90px;/*alto*/
+    background-color: brown;
+    color: gray;
 }

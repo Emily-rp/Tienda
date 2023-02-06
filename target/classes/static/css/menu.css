@@ -10,6 +10,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 #header{
     width: 100%;/*ancho*/
     height: 90px;/*alto*/
-    background-color: brown;
-    color: gray;
+    background-color: blue;
+    color: white;
 }
