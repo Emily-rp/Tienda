@@ -6,10 +6,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Created on : Feb 5, 2023, 5:29:48 PM
     Author     : emilyrodriguez
 */
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 80px 20px 0; /*borde superior y los aldos*/
+    
+}
 
 #header{
+    position: fixed; /*posición fija*/
+    top: 0;
+    left: 0;
     width: 100%;/*ancho*/
-    height: 90px;/*alto*/
+    height: 80px;/*alto*/
     background-color: blue;
+    color: white;
+}
+
+#aside{
+    position: fixed; /*posición fija*/
+    top: 80px;
+    left: 0;
+    width: 20%;/*ancho*/
+    bottom: 20px; /*abajo*/
+    background-color:steelblue;
     color: white;
 }
