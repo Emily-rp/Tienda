@@ -6,14 +6,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Created on : Feb 5, 2023, 5:29:48 PM
     Author     : emilyrodriguez
 */
+  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *{
     margin: 0;
     box-sizing: border-box;
+
+}
+h2{
+    line-height: 60pt;
+    color: #006699;
+    font-size: 30pt;
+    font-family:'heebo',sans-serif;
+    font-weight: 900;
+    
 }
 
 body{
     padding: 80px 20px 0; /*borde superior y los aldos*/
-    
+
 }
 
 #header{
@@ -34,6 +45,8 @@ body{
     bottom: 20px; /*abajo*/
     background-color:steelblue;
     color: white;
+    text-align: center;
+    border-radius: 0 0 90% 0;/*bode de la imagen*/
 }
 #contenido{
     position: fixed; /*posición fija*/
@@ -44,6 +57,12 @@ body{
     background-color:aliceblue;
     color:#333333;
     overflow: scroll; /*permite hacer scroll aunque este fijado*/
+    line-height: 20pt;/*separacion entre lineas*/
+    text-align: center;
+    font-family:'heebo',sans-serif;
+    font-weight: 300;
+    
+
 }
 #footer{
     position: fixed; /*posición fija*/
@@ -53,5 +72,33 @@ body{
     bottom: 0px; /*abajo*/
     background-color:gray;
     color:white;
+}
+
+.centrado{
     text-align: center;
 }
+
+.derecha{
+    text-align: right;
+}
+
+tbody tr:nth-child(odd){
+    background-color:#006699;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color:appworkspace;
+    color: #006699;
+}
+
+
+
+
+
+
+#imagen{
+    border-radius: 50px;/*bode de la imagen*/
+    width: 90%; /*tamaño respecto a la pagina*/
+}
+
