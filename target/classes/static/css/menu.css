@@ -22,7 +22,7 @@ body{
     left: 0;
     width: 100%;/*ancho*/
     height: 80px;/*alto*/
-    background-color: blue;
+    background-color:#006699;
     color: white;
 }
 
@@ -34,4 +34,24 @@ body{
     bottom: 20px; /*abajo*/
     background-color:steelblue;
     color: white;
+}
+#contenido{
+    position: fixed; /*posición fija*/
+    top: 80px;
+    left: 20%;
+    width: 80%;/*ancho*/
+    bottom: 20px; /*abajo*/
+    background-color:aliceblue;
+    color:#333333;
+    overflow: scroll; /*permite hacer scroll aunque este fijado*/
+}
+#footer{
+    position: fixed; /*posición fija*/
+    left: 0%;
+    width: 100%;/*ancho*/
+    height: 20px;
+    bottom: 0px; /*abajo*/
+    background-color:gray;
+    color:white;
+    text-align: center;
 }
