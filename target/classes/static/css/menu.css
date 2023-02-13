@@ -6,7 +6,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Created on : Feb 5, 2023, 5:29:48 PM
     Author     : emilyrodriguez
 */
-  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     margin: 0;
@@ -19,7 +19,7 @@ h2{
     font-size: 30pt;
     font-family:'heebo',sans-serif;
     font-weight: 900;
-    
+
 }
 
 body{
@@ -36,6 +36,48 @@ body{
     background-color:#006699;
     color: white;
 }
+
+
+
+.nav{
+    display: flex; /*uno a la par del otro*/
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu{
+    display: flex;
+    margin-right: 40px;
+    line-height: 80px; /*centrado*/
+    list-style: none;
+}
+
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 900;
+    padding: 0 40px;
+    line-height: 80px;
+}
+
+.nav-menu-link{
+    padding: 8px 12px;
+    border-radius: 8px
+}
+
+.nav-menu-link:hover{
+    font-size: 22px;
+    background-color: teal;
+    transition: 0.5s;
+}
+
 
 #aside{
     position: fixed; /*posición fija*/
@@ -61,7 +103,7 @@ body{
     text-align: center;
     font-family:'heebo',sans-serif;
     font-weight: 300;
-    
+
 
 }
 #footer{
@@ -73,6 +115,7 @@ body{
     background-color:gray;
     color:white;
 }
+
 
 .centrado{
     text-align: center;
