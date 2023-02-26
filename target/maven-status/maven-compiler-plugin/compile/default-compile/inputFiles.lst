@@ -1,2 +1,6 @@
 /Users/emilyrodriguez/Documents/GitHub/Tienda/src/main/java/com/tienda_l/TiendaApplication.java
+/Users/emilyrodriguez/Documents/GitHub/Tienda/src/main/java/com/tienda_l/service/ClienteService.java
+/Users/emilyrodriguez/Documents/GitHub/Tienda/src/main/java/com/tienda_l/dao/ClienteDao.java
 /Users/emilyrodriguez/Documents/GitHub/Tienda/src/main/java/com/tienda_l/controller/ClienteController.java
+/Users/emilyrodriguez/Documents/GitHub/Tienda/src/main/java/com/tienda_l/domain/Cliente.java
+/Users/emilyrodriguez/Documents/GitHub/Tienda/src/main/java/com/tienda_l/service/impl/ClienteServiceImpl.java
