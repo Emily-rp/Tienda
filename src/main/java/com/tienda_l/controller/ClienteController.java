@@ -1,5 +1,6 @@
 package com.tienda_l.controller;
 
+import com.tienda_l.domain.Cliente;
 import com.tienda_l.dao.ClienteDao;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,24 +10,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Service
-@Controller //anotación sale error entonces se le da al bombillo rojo e importa lo de arriba
-@Slf4j // no es tan necesario
-
+@Controller
+@Slf4j
 public class ClienteController {
     
     @Autowired
     private ClienteDao clienteDao;
     
-    //metodo al ejecutar en local host
-    @GetMapping("/") //)(va a salir error , relax)\
+    @GetMapping("/")
     public String inicio(Model model) {
         var variable="Hola desde el Back-End";
         model.addAttribute("mensaje", variable);
-    
-        var clientes=clienteDao.findAll(); //lista de la tabla y mete en clientes
-        model.addAttribute("clientes",clientes);//pasa del cliente el modelo de datos al index
-        return "index"; //devuelve index en local host
+       
+        
+        
+        var clientes=clienteDao.findAll();
+        model.addAttribute("clientes", clientes);
+        return "index";
     }
-    
     
 }
