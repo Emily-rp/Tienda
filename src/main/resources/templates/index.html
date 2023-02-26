@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org"> <!--  libreria thymeleaf para interactuar info entre java y html-->
     <head>
         <title>TechShop</title>
-        <meta charset="UTF-8"/>
+        <meta charset="UTF-8"/><!-- lo cierro con "/" --> 
     </head>
     <body>
         <div>Saludos</div>
         <p>Hola desde archivo emily</p>
-        <p>[[${mensaje}]]</p>
+        <p>[[${mensaje}]]</p> <!-- busca el saludo en Cliente Controller -->
+        
+        <!-- tabla dinamica , windows tools table -->
         <table border="0">
             <thead>
                 <tr>
@@ -18,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="cliente : ${clientes}">
+                <tr th:each="cliente : ${clientes}"><!-- se repite por cada objeto en la lista -->
                     <td>[[${cliente.nombre}]]</td>
                     <td>[[${cliente.apellidos}]]</td>
                     <td>[[${cliente.correo}]]</td>
