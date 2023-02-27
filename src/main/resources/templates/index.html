@@ -5,11 +5,12 @@
         <meta charset="UTF-8"/><!-- lo cierro con "/" --> 
     </head>
     <body>
+        <header th:replace="layout/plantilla :: header"></header> <!--Plantilla-->
         
-        <h1>Listado de clientes</h1>
-        
+        <h2>Listado de clientes</h2>
+
         <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a> <!--la ruta de nuevo cliente-->
-        
+
         <div th:if="${clientes != null and !clientes.empty}"> <!--si no hay nada no se ejecuta-->
 
             <!-- tabla dinamica , windows tools table -->
@@ -38,7 +39,8 @@
         <div th:if="${clientes == null or clientes.empty}"> 
             <h2>No hay clientes que mostrar</h2>
         </div>
-
+        
+        <footer th:replace="layout/plantilla :: footer"></footer>
 
     </body>
 </html>
