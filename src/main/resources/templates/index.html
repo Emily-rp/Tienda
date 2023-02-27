@@ -5,11 +5,11 @@
         <meta charset="UTF-8"/><!-- lo cierro con "/" --> 
     </head>
     <body>
-        <div>Saludos</div>
-        <p>Hola desde archivo emily</p>
-        <p>[[${mensaje}]]</p> <!-- busca el saludo en Cliente Controller -->
-
-
+        
+        <h1>Listado de clientes</h1>
+        
+        <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a> <!--la ruta de nuevo cliente-->
+        
         <div th:if="${clientes != null and !clientes.empty}"> <!--si no hay nada no se ejecuta-->
 
             <!-- tabla dinamica , windows tools table -->

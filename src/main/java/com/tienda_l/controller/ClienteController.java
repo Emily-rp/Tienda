@@ -21,14 +21,14 @@ public class ClienteController {
      //metodo al ejecutar en local host
     @GetMapping("/")// (va a salir error , relax)\
     public String inicio(Model model) {
-        var variable="Hola desde el Back-End";
-        model.addAttribute("mensaje", variable);
-       
-        
-        
-        var clientes=clienteService.getClientes();//lista de la tabla y mete en clientes
+        var clientes=clienteService.getClientes();//lista de la tabla y mete en clientes , muestra la informacion en pantalla
         model.addAttribute("clientes", clientes);//pasa del cliente el modelo de datos al index
         return "index";//devuelve index en local host
     }
     
+    @GetMapping("/cliente/nuevo")// index <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
+    public String clienteNuevo(Cliente cliente) {
+        
+        return "modificaCliente";//devuelve la vista html
+    }
 }
