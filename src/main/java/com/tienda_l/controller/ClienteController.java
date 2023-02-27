@@ -44,5 +44,12 @@ public class ClienteController {
         return "redirect:/";//se devuelve al index
     }
     
+    @GetMapping("/cliente/modificar/{idCliente}")// index  <td><a th:href="@{cliente/modificar/} + ${cliente.idCliente}"> Modificar </td>
+    public String clienteModificar(Cliente cliente, Model model){
+        cliente=clienteService.getCliente(cliente);
+        model.addAttribute("cliente", cliente);//incluye un clientes con valores
+        return "modificaCliente";//se devuelve a modificar 
+    }
+    
     
 }

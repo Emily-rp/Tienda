@@ -10,7 +10,9 @@
         <a th:href="@{/}">Regresar</a> 
         <hr>
         <form th:action="@{/cliente/guardar}" method="post" th:object="${cliente}">
-
+        <input type="hidden" name="idCliente" size ="20"  th:field="*{idCliente}"/><!-- Para evitar duplicados --> 
+        
+        
             <label>Nombre</label> 
             <input type="text" name="nombre" size ="20"  th:field="*{nombre}"/> <!-- coloque nombre en objeto cliente --> 
 
