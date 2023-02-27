@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Service
 @Controller //anotación sale error entonces se le da al bombillo rojo e importa lo de arriba
@@ -28,7 +29,20 @@ public class ClienteController {
     
     @GetMapping("/cliente/nuevo")// index <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
     public String clienteNuevo(Cliente cliente) {
-        
         return "modificaCliente";//devuelve la vista html
     }
+    
+    @PostMapping("/cliente/guardar")// html modificaCliente <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
+    public String clienteGuardar(Cliente cliente) {
+        clienteService.save(cliente); //para guardar el registro
+        return "redirect:/";//se devuelve al index
+    }
+    
+    @GetMapping("/cliente/eliminar/{idCliente}")// index <td><a th:href="@{cliente/eliminar/} + ${cliente.idCliente}"> Eliminar </td>
+    public String clienteEliminar(Cliente cliente) {
+        clienteService.delete(cliente); //elimina cliente
+        return "redirect:/";//se devuelve al index
+    }
+    
+    
 }
