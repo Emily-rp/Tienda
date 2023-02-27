@@ -2,6 +2,7 @@ package com.tienda_l.controller;
 
 import com.tienda_l.domain.Cliente;
 import com.tienda_l.dao.ClienteDao;
+import com.tienda_l.service.ClienteService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ClienteController {
     
     @Autowired
-    private ClienteDao clienteDao;
+    private ClienteService clienteService;
     
      //metodo al ejecutar en local host
     @GetMapping("/")// (va a salir error , relax)\
@@ -25,7 +26,7 @@ public class ClienteController {
        
         
         
-        var clientes=clienteDao.findAll();//lista de la tabla y mete en clientes
+        var clientes=clienteService.getClientes();//lista de la tabla y mete en clientes
         model.addAttribute("clientes", clientes);//pasa del cliente el modelo de datos al index
         return "index";//devuelve index en local host
     }
