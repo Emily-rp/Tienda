@@ -1,147 +1,114 @@
 /*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+Comentario
 */
 /* 
-    Created on : Feb 5, 2023, 5:29:48 PM
-    Author     : emilyrodriguez
+    Created on : Jan 23, 2023, 7:04:45 PM
+    Author     : aledu
 */
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 *{
     margin: 0;
     box-sizing: border-box;
+ }
 
-}
-h2{
-    line-height: 60pt;
-    color: #006699;
-    font-size: 30pt;
-    font-family:'heebo',sans-serif;
-    font-weight: 900;
-
-}
-
-body{
-    padding: 80px 20px 0; /*borde superior y los aldos*/
-
-}
-
+ body{
+     padding: 80px 20px 0;
+     font-family: sans-serif;
+ }
+ 
 #header{
-    position: fixed; /*posición fija*/
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;/*ancho*/
-    height: 80px;/*alto*/
-    background-color:#006699;
-    color: white;
+    width: 100%;
+    height: 80px;
+    background-color: wheat;
+    color: black;
 }
 
-
-
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+    
+}
 .nav{
-    display: flex; /*uno a la par del otro*/
+    display: flex;
+    
 }
-
 .nav-link{
-    color: white;
-    text-decoration: none;
+    color: darkred;
+    text-decoration: none;   
 }
 
 .nav-menu{
     display: flex;
     margin-right: 40px;
-    line-height: 80px; /*centrado*/
+    line-height: 80px;
     list-style: none;
+    
 }
-
 .nav-menu-item{
     font-size: 18px;
     margin: 0 10px;
 }
 
-.logo{
-    font-size: 30px;
-    font-weight: 900;
-    padding: 0 40px;
-    line-height: 80px;
-}
-
 .nav-menu-link{
     padding: 8px 12px;
-    border-radius: 8px
+    border-radius: 8px;
+    transition: 1s;
+    
 }
 
 .nav-menu-link:hover{
-    font-size: 22px;
-    background-color: teal;
+    background-color: #666600;
     transition: 0.5s;
+    font-size: 22px;
 }
-
-
 #aside{
-    position: fixed; /*posición fija*/
+    position: fixed;
     top: 80px;
     left: 0;
-    width: 20%;/*ancho*/
-    bottom: 20px; /*abajo*/
-    background-color:steelblue;
-    color: white;
-    text-align: center;
-    border-radius: 0 0 90% 0;/*bode de la imagen*/
+    width: 20%;
+    bottom: 20px;
+    background-color: yellowgreen   ;
+    color: black;
 }
+
 #contenido{
-    position: fixed; /*posición fija*/
+    position: fixed;
+    overflow: auto;
     top: 80px;
     left: 20%;
-    width: 80%;/*ancho*/
-    bottom: 20px; /*abajo*/
-    background-color:aliceblue;
-    color:#333333;
-    overflow: scroll; /*permite hacer scroll aunque este fijado*/
-    line-height: 20pt;/*separacion entre lineas*/
-    text-align: center;
-    font-family:'heebo',sans-serif;
-    font-weight: 300;
-
-
+    width: 80%;
+    bottom: 35px;
+    background-color: cyan;   ;
+    color: black;   
 }
 #footer{
-    position: fixed; /*posición fija*/
-    left: 0%;
-    width: 100%;/*ancho*/
-    height: 20px;
-    bottom: 0px; /*abajo*/
-    background-color:gray;
-    color:white;
-}
-
-
-.centrado{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 35px;
+    background-color: magenta;
+    color: black;   
     text-align: center;
+}
+.centrado{
+    text-align: center
 }
 
 .derecha{
-    text-align: right;
+    text-align: right
 }
 
 tbody tr:nth-child(odd){
-    background-color:#006699;
-    color: white;
+   background-color: red;
+   color: yellow;;
 }
 
-tr:nth-child(even){
-    background-color:appworkspace;
-    color: #006699;
+tbody tr:nth-child(even){
+    background-color: yellow;
+    color: red;
 }
-
-
-
-
-
-
-#imagen{
-    border-radius: 50px;/*bode de la imagen*/
-    width: 90%; /*tamaño respecto a la pagina*/
-}
-

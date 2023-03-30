@@ -1,55 +1,60 @@
 package com.tienda_l.controller;
 
+
 import com.tienda_l.domain.Cliente;
-import com.tienda_l.dao.ClienteDao;
 import com.tienda_l.service.ClienteService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Service
-@Controller //anotación sale error entonces se le da al bombillo rojo e importa lo de arriba
-@Slf4j // no es tan necesario
+/**
+ *
+ * @author aledu
+ */
+@Controller
+@RequestMapping("/cliente")
 public class ClienteController {
     
-    @Autowired
+    @Autowired//esta etiqueta se da cuenta de que ClienteService es una interface, entonces busca que clase usa
     private ClienteService clienteService;
     
-     //metodo al ejecutar en local host
-    @GetMapping("/")// (va a salir error , relax)\
-    public String inicio(Model model) {
-        var clientes=clienteService.getClientes();//lista de la tabla y mete en clientes , muestra la informacion en pantalla
-        model.addAttribute("clientes", clientes);//pasa del cliente el modelo de datos al index
-        return "index";//devuelve index en local host
+    @GetMapping("/listado")
+    public String inicio(Model model){
+        var clientes=clienteService.getClientes();
+        model.addAttribute("clientes", clientes);
+        model.addAttribute("totalClientes",clientes.size());
+        var totalCredito=0;
+        for(Cliente c: clientes){
+            totalCredito+=c.getCredito().getLimite();
+        }
+        model.addAttribute("totalCredito", totalCredito);
+        return "/cliente/listado";
     }
     
-    @GetMapping("/cliente/nuevo")// index <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
-    public String clienteNuevo(Cliente cliente) {
-        return "modificaCliente";//devuelve la vista html
+    @GetMapping("/nuevo")
+    public String clienteNuevo(Cliente cliente){
+        return "/cliente/modifica";
     }
     
-    @PostMapping("/cliente/guardar")// html modificaCliente <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
-    public String clienteGuardar(Cliente cliente) {
-        clienteService.save(cliente); //para guardar el registro
-        return "redirect:/";//se devuelve al index
+    @PostMapping("/guardar")
+    public String clienteGuardar(Cliente cliente){
+        clienteService.save(cliente);
+        return "redirect:/cliente/listado";
     }
     
-    @GetMapping("/cliente/eliminar/{idCliente}")// index <td><a th:href="@{cliente/eliminar/} + ${cliente.idCliente}"> Eliminar </td>
-    public String clienteEliminar(Cliente cliente) {
-        clienteService.delete(cliente); //elimina cliente
-        return "redirect:/";//se devuelve al index
+    @GetMapping("/eliminar/{idCliente}")
+    public String clienteEliminar(Cliente cliente){
+        clienteService.delete(cliente);
+        return "redirect:/cliente/listado";
     }
     
-    @GetMapping("/cliente/modificar/{idCliente}")// index  <td><a th:href="@{cliente/modificar/} + ${cliente.idCliente}"> Modificar </td>
-    public String clienteModificar(Cliente cliente, Model model){
+    @GetMapping("/modificar/{idCliente}")
+    public String clienteModificar(Model model, Cliente cliente){
         cliente=clienteService.getCliente(cliente);
-        model.addAttribute("cliente", cliente);//incluye un clientes con valores
-        return "modificaCliente";//se devuelve a modificar 
+        model.addAttribute("cliente", cliente);
+        return "/cliente/modifica";
     }
-    
-    
 }
